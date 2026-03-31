@@ -1,0 +1,1353 @@
+/* ================================================
+   VARIÁVEIS GLOBAIS
+================================================ */
+:root {
+  /* Cores principais */
+  --preto: #0d0b08;
+  --preto-footer: #080806;
+  --dourado: #c9a84c;
+  --verde: #1b3a2d;
+  --bege: #f5f0e8;
+
+  /* Dourado com opacidades */
+  --dourado-08: rgba(201, 168, 76, 0.08);
+  --dourado-22: rgba(201, 168, 76, 0.22);
+  --dourado-44: rgba(201, 168, 76, 0.44);
+  --dourado-60: rgba(201, 168, 76, 0.6);
+
+  /* Verde com opacidade */
+  --verde-22: rgba(27, 58, 45, 0.22);
+
+  /* Tipografia */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-ui: "Raleway", sans-serif;
+
+  /* Espaçamentos */
+  --padding-secao: 80px 120px;
+  --gap-grid: 16px;
+}
+
+/* ================================================
+   RESET E BASE GLOBAL
+================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--preto);
+  color: white;
+  font-family: var(--font-ui);
+  font-weight: 300;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ================================================
+   ELEMENTOS REUTILIZÁVEIS
+================================================ */
+.tag {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--dourado);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.divider {
+  width: 40px;
+  height: 1px;
+  background-color: var(--dourado);
+  margin: 24px 0;
+}
+
+.romano {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--dourado);
+}
+
+/* Botões */
+.btn-primario {
+  display: inline-block;
+  background-color: var(--dourado);
+  color: var(--preto);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 2px;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+
+.btn-primario:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-secundario {
+  display: inline-block;
+  background: none;
+  color: white;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 400;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+
+.btn-secundario:hover {
+  opacity: 0.7;
+}
+
+/* ================================================
+   1. NAV
+================================================ */
+nav#principal {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #080806;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 23px 120px;
+}
+
+/* Brand esquerdo */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-brand img {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  object-fit: cover;
+  background-color: #f2ead8;
+}
+
+.nav-brand div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.nav-brand span {
+  font-family: var(--font-ui);
+  font-size: 15px;
+  font-weight: 400;
+  color: #f2ead8;
+  opacity: 0.6;
+}
+
+.nav-brand strong {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 600;
+  color: #f2ead8;
+}
+
+/* Links centro */
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 400;
+  color: #f2ead8;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+/* CTA direito */
+.btn-matricula {
+  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: white;
+  background-color: #0d0d0d;
+  padding: 10px 22px;
+  border-radius: 100px;
+  transition: opacity 0.2s;
+}
+
+.btn-matricula:hover {
+  opacity: 0.8;
+}
+
+/* ================================================
+   2. HERO
+================================================ */
+section#hero {
+  background-color: var(--preto);
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto;
+}
+
+/* Grid interno hero (conteúdo + imagem) */
+section#hero > .hero-content,
+section#hero > .hero-imagem {
+  /* posicionados via grid abaixo */
+}
+
+section#hero {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Wrapper interno do conteúdo do hero */
+.hero-grid-interno {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 60px;
+  align-items: center;
+  padding: 80px 120px 60px;
+}
+
+section#hero .hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+section#hero .hero-content .tag {
+  margin-bottom: 20px;
+}
+
+section#hero .hero-content h1 {
+  font-family: var(--font-display);
+  font-size: 52px;
+  font-weight: 300;
+  line-height: 1.1;
+  color: white;
+}
+
+section#hero .hero-content h1 em {
+  font-style: italic;
+  color: var(--dourado);
+}
+
+section#hero .hero-content .subtitulo {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 300;
+  color: white;
+  opacity: 0.5;
+  max-width: 360px;
+  line-height: 1.7;
+}
+
+section#hero .hero-content .citacao {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 15px;
+  color: white;
+  opacity: 0.45;
+  margin: 20px 0;
+  border: none;
+  padding: 0;
+}
+
+.hero-botoes {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+/* Coluna direita: imagem */
+.hero-imagem {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* Textura de grid no fundo */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 39px,
+      rgba(201, 168, 76, 0.08) 39px,
+      rgba(201, 168, 76, 0.08) 40px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 39px,
+      rgba(201, 168, 76, 0.08) 39px,
+      rgba(201, 168, 76, 0.08) 40px
+    );
+}
+
+.frame-witsius {
+  position: relative;
+  z-index: 1;
+  width: 300px;
+  height: 380px;
+}
+
+.frame-witsius img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 1px solid var(--dourado-44);
+  background-color: #1a1612;
+}
+
+.badge-witsius {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  z-index: 2;
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--dourado);
+  opacity: 0.7;
+  background-color: var(--preto);
+  border: 1px solid var(--dourado-44);
+  padding: 6px 10px;
+}
+
+/* Faixa inferior verde */
+.hero-faixa {
+  background-color: var(--verde);
+  padding: 14px 120px;
+}
+
+.hero-faixa ul {
+  display: flex;
+  align-items: center;
+}
+
+.hero-faixa li {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--bege);
+  opacity: 0.85;
+  padding: 0 28px;
+  position: relative;
+}
+
+.hero-faixa li:first-child {
+  padding-left: 0;
+}
+
+/* Ponto dourado separador */
+.hero-faixa li + li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--dourado);
+  opacity: 0.8;
+}
+
+/* ================================================
+   3. CURSOS — PILARES COM FILTRO
+================================================ */
+section#cursos {
+  background-color: var(--preto);
+  padding: var(--padding-secao);
+}
+
+section#cursos > .tag {
+  margin-bottom: 12px;
+}
+
+section#cursos h2 {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 300;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 32px;
+}
+
+section#cursos h2 em {
+  font-style: italic;
+  color: var(--dourado);
+}
+
+/* Filtros */
+.filtros {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.filtro {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 8px 18px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+  background: none;
+  color: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+}
+
+.filtro.ativo {
+  background-color: var(--dourado);
+  color: var(--preto);
+  border-color: var(--dourado);
+}
+
+.filtro:hover:not(.ativo) {
+  color: rgba(255, 255, 255, 0.75);
+  border-color: rgba(201, 168, 76, 0.5);
+}
+
+/* Grid de cards */
+.grid-pilares {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap-grid);
+}
+
+/* Card */
+.card-pilar {
+  background-color: var(--preto);
+  border: 1px solid rgba(201, 168, 76, 0.13);
+  border-radius: 6px;
+  overflow: hidden;
+  transition:
+    border-color 0.3s,
+    transform 0.3s;
+}
+
+.card-pilar:hover {
+  border-color: rgba(201, 168, 76, 0.4);
+  transform: translateY(-4px);
+}
+
+/* Thumbnail */
+.card-thumb {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  background-color: #1a1612;
+  overflow: hidden;
+}
+
+.card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.card-pilar:hover .card-thumb img {
+  opacity: 0.8;
+}
+
+.card-thumb .romano {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  font-size: 48px;
+  line-height: 1;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.badge-pilar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: var(--font-ui);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--dourado);
+  background-color: rgba(13, 11, 8, 0.75);
+  border: 1px solid var(--dourado-22);
+  padding: 4px 8px;
+  z-index: 1;
+}
+
+/* Corpo do card */
+.card-corpo {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-label {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dourado);
+}
+
+.card-corpo h3 {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+  line-height: 1.3;
+}
+
+.card-corpo h3 em {
+  font-style: italic;
+  color: var(--dourado);
+}
+
+.card-corpo p {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 300;
+  color: white;
+  opacity: 0.35;
+  line-height: 1.6;
+}
+
+.card-link {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--dourado);
+  opacity: 0.6;
+  margin-top: 4px;
+  transition: opacity 0.2s;
+}
+
+.card-link:hover {
+  opacity: 1;
+}
+
+.card-pilar.oculto {
+  display: none;
+}
+
+/* ================================================
+   4. PR. ANTÔNIO SIQUEIRA
+================================================ */
+section#quem-sou {
+  background-color: var(--preto);
+  padding: var(--padding-secao);
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* Coluna esquerda */
+.antonio-imagem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.frame-antonio {
+  position: relative;
+  width: 220px;
+  height: 280px;
+  border: 1px solid var(--dourado-22);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.frame-antonio img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: #1a1612;
+}
+
+/* Cantos decorativos */
+.frame-canto {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.frame-canto--tl {
+  top: -1px;
+  left: -1px;
+  border-top: 2px solid var(--dourado);
+  border-left: 2px solid var(--dourado);
+}
+
+.frame-canto--tr {
+  top: -1px;
+  right: -1px;
+  border-top: 2px solid var(--dourado);
+  border-right: 2px solid var(--dourado);
+}
+
+.frame-canto--bl {
+  bottom: -1px;
+  left: -1px;
+  border-bottom: 2px solid var(--dourado);
+  border-left: 2px solid var(--dourado);
+}
+
+.frame-canto--br {
+  bottom: -1px;
+  right: -1px;
+  border-bottom: 2px solid var(--dourado);
+  border-right: 2px solid var(--dourado);
+}
+
+.antonio-nome {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  color: white;
+  margin-bottom: 0;
+}
+
+.antonio-cargo {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dourado);
+  opacity: 0.6;
+}
+
+.antonio-social {
+  display: flex;
+  gap: 10px;
+  margin-top: 4px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.antonio-social a {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--dourado);
+  border: 1px solid var(--dourado-44);
+  padding: 7px 14px;
+  border-radius: 2px;
+  transition: background-color 0.2s;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.antonio-social a:hover {
+  background-color: var(--dourado-08);
+}
+
+/* Coluna direita */
+.antonio-texto {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.antonio-texto h2 {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 300;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.antonio-texto h2 em {
+  font-style: italic;
+  color: var(--dourado);
+}
+
+.cargo-completo {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: white;
+  opacity: 0.3;
+}
+
+.antonio-texto p {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 300;
+  color: white;
+  opacity: 0.5;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+.antonio-citacao {
+  border-left: 2px solid var(--dourado);
+  background-color: var(--dourado-08);
+  padding: 16px 20px;
+  margin: 20px 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 16px;
+  color: white;
+  opacity: 0.7;
+  line-height: 1.5;
+}
+
+.antonio-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.antonio-badges span {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: white;
+  opacity: 0.6;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 2px;
+  padding: 4px 10px;
+}
+
+/* ================================================
+   5. DIFERENCIAIS
+================================================ */
+section#diferenciais {
+  background-color: var(--bege);
+  padding: var(--padding-secao);
+}
+
+section#diferenciais .tag {
+  color: var(--verde);
+  margin-bottom: 12px;
+}
+
+section#diferenciais h2 {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 300;
+  color: var(--verde);
+  margin-bottom: 48px;
+  line-height: 1.2;
+}
+
+.grid-diferenciais {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.diferencial {
+  padding: 0 40px;
+  border-right: 1px solid rgba(27, 58, 45, 0.13);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.diferencial:first-child {
+  padding-left: 0;
+}
+
+.diferencial:last-child {
+  border-right: none;
+}
+
+.numero-diferencial {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--verde);
+  opacity: 0.2;
+  line-height: 1;
+}
+
+.diferencial h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--verde);
+  line-height: 1.3;
+}
+
+.diferencial p {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--verde);
+  opacity: 0.6;
+  line-height: 1.7;
+}
+
+/* ================================================
+   6. CTA FINAL — MATRICULE-SE
+================================================ */
+section#matricule-se {
+  background-color: var(--preto);
+  padding: 100px 120px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.w-deco {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 280px;
+  font-weight: 300;
+  color: white;
+  opacity: 0.03;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+.w-esquerdo {
+  left: -60px;
+}
+
+.w-direito {
+  right: -60px;
+}
+
+section#matricule-se .tag {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-bottom: 16px;
+}
+
+section#matricule-se h2 {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 300;
+  color: white;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+section#matricule-se h2 em {
+  font-style: italic;
+  color: var(--dourado);
+}
+
+.cta-subtitulo {
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 300;
+  color: white;
+  opacity: 0.35;
+  max-width: 420px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-botoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-botoes .btn-secundario {
+  text-decoration: none;
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  color: var(--dourado);
+  opacity: 0.6;
+  padding: 14px 28px;
+  border-radius: 2px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition:
+    opacity 0.2s,
+    background-color 0.2s;
+}
+
+.cta-botoes .btn-secundario:hover {
+  opacity: 1;
+  background-color: var(--dourado-08);
+}
+
+.cta-nota {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 300;
+  color: white;
+  opacity: 0.2;
+  margin-bottom: 48px;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-valores {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  border-top: 1px solid rgba(201, 168, 76, 0.13);
+  padding-top: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.valor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.valor .romano {
+  font-size: 20px;
+}
+
+.valor span:last-child {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: white;
+  opacity: 0.25;
+}
+
+/* ================================================
+   7. FOOTER
+================================================ */
+footer {
+  background-color: var(--preto-footer);
+  border-top: 1px solid rgba(201, 168, 76, 0.13);
+  padding: 60px 120px 32px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 48px;
+}
+
+/* Coluna brand */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.icone-logo {
+  font-size: 20px;
+  color: var(--dourado);
+}
+
+.footer-logo div {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.3;
+}
+
+.footer-logo strong {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.footer-logo span {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 300;
+  color: white;
+  opacity: 0.4;
+}
+
+.footer-brand > p {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 300;
+  color: white;
+  opacity: 0.4;
+  line-height: 1.7;
+  max-width: 240px;
+}
+
+/* Colunas nav e contato */
+.footer-nav h4,
+.footer-contato h4 {
+  font-family: var(--font-ui);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--dourado);
+  margin-bottom: 20px;
+}
+
+.footer-nav ul,
+.footer-contato ul {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-nav a,
+.footer-contato a {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 300;
+  color: white;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  word-break: break-word;
+}
+
+.footer-nav a:hover,
+.footer-contato a:hover {
+  opacity: 1;
+}
+
+/* Linha inferior */
+.footer-rodape {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  padding-top: 24px;
+}
+
+.footer-rodape > span {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 300;
+  color: white;
+  opacity: 0.3;
+}
+
+.footer-rodape em {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 14px;
+  color: var(--dourado);
+  opacity: 0.6;
+}
+
+.footer-social {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-social a {
+  font-family: var(--font-ui);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: white;
+  opacity: 0.4;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 6px 10px;
+  border-radius: 2px;
+  transition: opacity 0.2s;
+}
+
+.footer-social a:hover {
+  opacity: 1;
+}
+
+/* ================================================
+   BOTÃO FLUTUANTE WHATSAPP
+================================================ */
+.btn-whatsapp-fixo {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: rgba(22, 163, 74); /* sempre dourado — nunca verde */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(22, 163, 74);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.2s;
+}
+
+.btn-whatsapp-fixo:hover {
+    transition:
+        transform: scale(1.08);
+        transform 0.3s ease,
+        box-shadow 0.2s;
+}
+
+/* ================================================
+   RESPONSIVIDADE — Tablet (até 1024px)
+================================================ */
+@media (max-width: 1024px) {
+  :root {
+    --padding-secao: 60px 48px;
+  }
+
+  nav#principal {
+    padding: 12px 48px;
+  }
+
+  .hero-grid-interno {
+    padding: 60px 48px 48px;
+    gap: 40px;
+  }
+
+  .hero-faixa {
+    padding: 14px 48px;
+  }
+
+  section#hero .hero-content h1 {
+    font-size: 42px;
+  }
+
+  .grid-pilares {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  section#quem-sou {
+    gap: 48px;
+  }
+
+  footer {
+    padding: 60px 48px 32px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ================================================
+   RESPONSIVIDADE — Mobile (até 768px)
+================================================ */
+@media (max-width: 768px) {
+  :root {
+    --padding-secao: 48px 24px;
+  }
+
+  /* Nav mobile */
+  nav#principal {
+    padding: 12px 24px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  /* Hero mobile */
+  .hero-grid-interno {
+    grid-template-columns: 1fr;
+    padding: 48px 24px 40px;
+    gap: 40px;
+  }
+
+  section#hero .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .hero-imagem {
+    justify-content: center;
+  }
+
+  .frame-witsius {
+    width: 240px;
+    height: 300px;
+  }
+
+  .hero-faixa {
+    padding: 14px 24px;
+    overflow-x: auto;
+  }
+
+  .hero-faixa ul {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .hero-faixa li + li::before {
+    display: none;
+  }
+
+  /* Pilares mobile */
+  section#cursos {
+    padding: 48px 24px;
+  }
+
+  .grid-pilares {
+    grid-template-columns: 1fr;
+  }
+
+  .filtros {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    padding-bottom: 4px;
+  }
+
+  /* Pr. Antônio mobile */
+  section#quem-sou {
+    padding: 48px 24px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  /* Diferenciais mobile */
+  section#diferenciais {
+    padding: 48px 24px;
+  }
+
+  .grid-diferenciais {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .diferencial {
+    padding: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(27, 58, 45, 0.13);
+    padding-bottom: 32px;
+  }
+
+  .diferencial:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  /* CTA mobile */
+  section#matricule-se {
+    padding: 64px 24px;
+  }
+
+  section#matricule-se h2 {
+    font-size: 34px;
+  }
+
+  .cta-botoes {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-botoes .btn-primario,
+  .cta-botoes .btn-secundario {
+    text-align: center;
+  }
+
+  .cta-valores {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .w-deco {
+    font-size: 160px;
+    opacity: 0.02;
+  }
+
+  /* Footer mobile */
+  footer {
+    padding: 48px 24px 24px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-rodape {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+}

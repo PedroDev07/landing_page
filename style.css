@@ -66,6 +66,14 @@ ul {
 }
 
 /* ================================================
+   SCROLL OFFSET — compensa a nav sticky
+================================================ */
+section,
+footer {
+  scroll-margin-top: 96px;
+}
+
+/* ================================================
    ELEMENTOS REUTILIZÁVEIS
 ================================================ */
 .tag {
@@ -143,8 +151,7 @@ nav#principal {
   border-bottom: 1px solid #ddd;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 23px 120px;
+  padding: 23px 120px 23px 20px;
 }
 
 /* Brand esquerdo */
@@ -187,19 +194,38 @@ nav#principal {
 .nav-links {
   display: flex;
   gap: 32px;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-links a {
   font-family: var(--font-ui);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 400;
   color: #f2ead8;
   opacity: 0.7;
+  position: relative;
+  text-decoration: none;
   transition: opacity 0.2s;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--dourado);
+  transition: width 0.25s ease;
 }
 
 .nav-links a:hover {
   opacity: 1;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 /* CTA direito */
@@ -207,17 +233,19 @@ nav#principal {
   display: inline-block;
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 500;
-  letter-spacing: 0.5px;
-  color: white;
-  background-color: #0d0d0d;
-  padding: 10px 22px;
-  border-radius: 100px;
-  transition: opacity 0.2s;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #0d0b08;
+  background: #c9a84c;
+  padding: 10px 24px;
+  border-radius: 2px;
+  border: none;
+  transition: background 0.2s ease;
 }
 
 .btn-matricula:hover {
-  opacity: 0.8;
+  background: #b8913d;
 }
 
 /* ================================================
@@ -228,19 +256,10 @@ section#hero {
   position: relative;
   overflow: hidden;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto auto;
-}
-
-/* Grid interno hero (conteúdo + imagem) */
-section#hero > .hero-content,
-section#hero > .hero-imagem {
-  /* posicionados via grid abaixo */
-}
-
-section#hero {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: 1fr auto;
+  min-height: calc(100vh - 96px);
+  align-items: center;
 }
 
 /* Wrapper interno do conteúdo do hero */
@@ -256,6 +275,7 @@ section#hero .hero-content {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding: 80px 40px 60px 70px;
 }
 
 section#hero .hero-content .tag {
@@ -308,22 +328,9 @@ section#hero .hero-content .citacao {
   position: relative;
   display: flex;
   justify-content: center;
-  /* Textura de grid no fundo */
-  background-image:
-    repeating-linear-gradient(
-      0deg,
-      transparent,
-      transparent 39px,
-      rgba(201, 168, 76, 0.08) 39px,
-      rgba(201, 168, 76, 0.08) 40px
-    ),
-    repeating-linear-gradient(
-      90deg,
-      transparent,
-      transparent 39px,
-      rgba(201, 168, 76, 0.08) 39px,
-      rgba(201, 168, 76, 0.08) 40px
-    );
+  min-width: 0;
+  overflow: hidden;
+  background-color: var(--preto);
 }
 
 .frame-witsius {
@@ -360,6 +367,9 @@ section#hero .hero-content .citacao {
 
 /* Faixa inferior verde */
 .hero-faixa {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  align-self: end;
   background-color: var(--verde);
   padding: 14px 120px;
 }
@@ -394,6 +404,118 @@ section#hero .hero-content .citacao {
   transform: translate(-50%, -50%);
   color: var(--dourado);
   opacity: 0.8;
+}
+
+/* ================================================
+   HERO — CARROSSEL DE CURSOS
+================================================ */
+.hero-carousel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  padding: 40px 24px;
+}
+
+.carousel-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+.carousel-card {
+  min-width: 100%;
+  background: #1a1a17;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #c9a84c22;
+}
+
+.carousel-card-pilar {
+  background: #c9a84c;
+  color: #0d0b08;
+  font-size: 12px;
+  padding: 4px 10px;
+  display: inline-block;
+  border-radius: 4px;
+  margin: 16px 16px 0;
+}
+
+.carousel-card-thumb {
+  height: 220px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff33;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.carousel-card-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-card-body {
+  padding: 16px;
+}
+
+.carousel-card-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 300;
+  color: #f5f0e8;
+  margin-bottom: 8px;
+}
+
+.carousel-card-desc {
+  font-family: var(--font-ui);
+  font-size: 12px;
+  color: #ffffff55;
+  margin-bottom: 12px;
+}
+
+.carousel-card-badge {
+  font-size: 11px;
+  color: #c9a84c;
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.carousel-card-btn {
+  display: inline-block;
+  background: #f5f0e8;
+  color: #0d0b08;
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.carousel-btn {
+  background: transparent;
+  border: 1px solid #c9a84c44;
+  color: #c9a84c;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: border-color 0.2s;
+}
+
+.carousel-btn:hover {
+  border-color: #c9a84c;
 }
 
 /* ================================================
@@ -595,7 +717,7 @@ section#quem-sou {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   gap: 80px;
-  align-items: center;
+  align-items: start;
 }
 
 /* Coluna esquerda */
@@ -609,8 +731,8 @@ section#quem-sou {
 
 .frame-antonio {
   position: relative;
-  width: 220px;
-  height: 280px;
+  width: 300px;
+  height: 380px;
   border: 1px solid var(--dourado-22);
   border-radius: 4px;
   margin-bottom: 8px;
@@ -784,12 +906,12 @@ section#quem-sou {
    5. DIFERENCIAIS
 ================================================ */
 section#diferenciais {
-  background-color: var(--bege);
+  background-color: var(--preto);
   padding: var(--padding-secao);
 }
 
 section#diferenciais .tag {
-  color: var(--verde);
+  color: var(--dourado);
   margin-bottom: 12px;
 }
 
@@ -797,7 +919,7 @@ section#diferenciais h2 {
   font-family: var(--font-display);
   font-size: 40px;
   font-weight: 300;
-  color: var(--verde);
+  color: white;
   margin-bottom: 48px;
   line-height: 1.2;
 }
@@ -809,7 +931,7 @@ section#diferenciais h2 {
 
 .diferencial {
   padding: 0 40px;
-  border-right: 1px solid rgba(27, 58, 45, 0.13);
+  border-right: 1px solid var(--dourado-22);
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -828,8 +950,8 @@ section#diferenciais h2 {
   font-style: italic;
   font-size: 48px;
   font-weight: 300;
-  color: var(--verde);
-  opacity: 0.2;
+  color: var(--dourado);
+  opacity: 0.4;
   line-height: 1;
 }
 
@@ -837,7 +959,7 @@ section#diferenciais h2 {
   font-family: var(--font-display);
   font-size: 22px;
   font-weight: 400;
-  color: var(--verde);
+  color: white;
   line-height: 1.3;
 }
 
@@ -845,8 +967,8 @@ section#diferenciais h2 {
   font-family: var(--font-ui);
   font-size: 13px;
   font-weight: 300;
-  color: var(--verde);
-  opacity: 0.6;
+  color: white;
+  opacity: 0.5;
   line-height: 1.7;
 }
 
@@ -1092,7 +1214,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid rgba(223, 212, 212, 0.06);
   padding-top: 24px;
 }
 
@@ -1137,6 +1259,17 @@ footer {
 /* ================================================
    BOTÃO FLUTUANTE WHATSAPP
 ================================================ */
+@keyframes sonar {
+  0% {
+    transform: scale();
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.8);
+    opacity: 0;
+  }
+}
+
 .btn-whatsapp-fixo {
   position: fixed;
   bottom: 24px;
@@ -1145,21 +1278,52 @@ footer {
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background-color: rgba(22, 163, 74); /* sempre dourado — nunca verde */
+  background-color: #16a34a;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: rgba(22, 163, 74);
+  transition: transform 0.3s ease;
+}
+
+.btn-whatsapp-fixo::before {
+  content: "";
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #16a34a;
+  animation: sonar 2.5s ease-out infinite;
+  z-index: -1;
+}
+
+.btn-whatsapp-fixo::after {
+  content: "Fale conosco!";
+  position: absolute;
+  right: calc(100% + 12px);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  background-color: #3a3a3a;
+  color: #ffffff;
+  font-family: var(--font-ui);
+  font-size: 13px;
+  font-weight: 400;
+  white-space: nowrap;
+  padding: 8px 14px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
   transition:
-    transform 0.3s ease,
-    box-shadow 0.2s;
+    opacity 0.25s ease,
+    transform 0.25s ease;
 }
 
 .btn-whatsapp-fixo:hover {
-    transition:
-        transform: scale(1.08);
-        transform 0.3s ease,
-        box-shadow 0.2s;
+  transform: scale(1.12);
+}
+
+.btn-whatsapp-fixo:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
 }
 
 /* ================================================
@@ -1297,7 +1461,7 @@ footer {
   .diferencial {
     padding: 0;
     border-right: none;
-    border-bottom: 1px solid rgba(27, 58, 45, 0.13);
+    border-bottom: 1px solid rgba(255, 237, 237, 0.13);
     padding-bottom: 32px;
   }
 

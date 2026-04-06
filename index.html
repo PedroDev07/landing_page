@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CET Witsius — Teologia com Piedadez</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ================================================
+       NAV — Navegação principal
+  ================================================ -->
+    <nav id="principal">
+      <div class="nav-brand">
+        <!-- TODO: substituir pelo logo/retrato real de Herman Witsius -->
+        <img src="img/Herman-Witsius.jpg" alt="Herman Witsius" />
+        <div>
+          <span>Centro de Estudos Teológicos</span>
+          <strong>Herman Witsius</strong>
+        </div>
+      </div>
+
+      <div class="nav-links">
+        <a href="#hero">Principal</a>
+        <a href="#quem-sou">Quem sou?</a>
+        <a href="#cursos">Sobre o curso</a>
+        <a href="#diferenciais">Nossos diferenciais</a>
+      </div>
+
+      <div class="nav-cta">
+        <a href="#matricule-se" class="btn-matricula">Matricule-se</a>
+      </div>
+    </nav>
+
+    <!-- ================================================
+       HERO — Seção principal de apresentação
+  ================================================ -->
+    <section id="hero">
+      <div class="hero-content">
+        <span class="tag">TEOLOGIA COM PIEDADE</span>
+
+        <h1>Teologia que une <em>verdade</em> e vida</h1>
+
+        <div class="divider"></div>
+
+        <p class="subtitulo">
+          Formação teológica sólida que integra verdade bíblica, profundidade
+          doutrinária e aplicação prática para a vida cristã.
+        </p>
+
+        <blockquote class="citacao">
+          <!-- TODO: substituir pela citação real de Herman Witsius -->
+          "A verdadeira sabedoria começa no conhecimento de Deus." — Herman
+          Witsius
+        </blockquote>
+
+        <div class="hero-botoes">
+          <a href="#matricule-se" class="btn-primario">MATRICULE-SE AGORA</a>
+          <a href="#cursos" class="btn-secundario">Ver os cursos</a>
+        </div>
+      </div>
+
+      <div class="hero-imagem">
+        <div class="hero-carousel">
+          <button class="carousel-btn carousel-prev" aria-label="Anterior">&#8592;</button>
+
+          <div class="carousel-track-wrapper">
+            <div class="carousel-track">
+
+              <!-- Slide 1 -->
+              <div class="carousel-card">
+                <span class="carousel-card-pilar">Teologia Bíblica</span>
+                <div class="carousel-card-thumb">
+                  <!-- TODO: substituir pela capa real do curso -->
+                  <img src="img/teste.png" alt="Conselhos a Líderes Novos" />
+                </div>
+                <div class="carousel-card-body">
+                  <span class="carousel-card-badge">PILAR I · Teologia Bíblica</span>
+                  <h3 class="carousel-card-title">Conselhos a Líderes Novos — O Exemplo de <em>Timóteo</em></h3>
+                  <p class="carousel-card-desc">Estudo pastoral baseado nas cartas paulinas a Timóteo, abordando liderança e maturidade espiritual.</p>
+                  <!-- TODO: substituir pelo link real do Hotmart -->
+                  <a href="#" class="carousel-card-btn">Saiba mais →</a>
+                </div>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="carousel-card">
+                <span class="carousel-card-pilar">Teologia Sistemática</span>
+                <div class="carousel-card-thumb">
+                  <!-- TODO: substituir pela capa real do curso -->
+                  <img src="assets/img/cursos/alianca.jpg" alt="A Aliança entre o Pai e o Filho" />
+                </div>
+                <div class="carousel-card-body">
+                  <span class="carousel-card-badge">PILAR II · Teologia Sistemática</span>
+                  <h3 class="carousel-card-title">A <em>Aliança</em> entre o Pai e o Filho</h3>
+                  <p class="carousel-card-desc">Estudo aprofundado da doutrina do pactum salutis, o acordo eterno da redenção na teologia reformada.</p>
+                  <!-- TODO: substituir pelo link real do Hotmart -->
+                  <a href="#" class="carousel-card-btn">Saiba mais →</a>
+                </div>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="carousel-card">
+                <span class="carousel-card-pilar">Teologia Sistemática</span>
+                <div class="carousel-card-thumb">
+                  <!-- TODO: substituir pela capa real do curso -->
+                  <img src="assets/img/cursos/santificacao.jpg" alt="Santificação" />
+                </div>
+                <div class="carousel-card-body">
+                  <span class="carousel-card-badge">PILAR III · Teologia Sistemática</span>
+                  <h3 class="carousel-card-title"><em>Santificação</em></h3>
+                  <p class="carousel-card-desc">Análise bíblica do processo de transformação do crente e sua relação com a obra do Espírito Santo.</p>
+                  <!-- TODO: substituir pelo link real do Hotmart -->
+                  <a href="#" class="carousel-card-btn">Saiba mais →</a>
+                </div>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="carousel-card">
+                <span class="carousel-card-pilar">Teologia Sistemática</span>
+                <div class="carousel-card-thumb">
+                  <!-- TODO: substituir pela capa real do curso -->
+                  <img src="assets/img/cursos/credo.jpg" alt="Estudos no Credo Apostólico" />
+                </div>
+                <div class="carousel-card-body">
+                  <span class="carousel-card-badge">PILAR IV · Teologia Sistemática</span>
+                  <h3 class="carousel-card-title">Estudos no <em>Credo Apostólico</em></h3>
+                  <p class="carousel-card-desc">Estudo sistemático das doutrinas fundamentais da fé cristã a partir do Credo Apostólico.</p>
+                  <!-- TODO: substituir pelo link real do Hotmart -->
+                  <a href="#" class="carousel-card-btn">Saiba mais →</a>
+                </div>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="carousel-card">
+                <span class="carousel-card-pilar">Teologia Prática</span>
+                <div class="carousel-card-thumb">
+                  <!-- TODO: substituir pela capa real do curso -->
+                  <img src="assets/img/cursos/ler-biblia.jpg" alt="Como Ler a Bíblia Corretamente" />
+                </div>
+                <div class="carousel-card-body">
+                  <span class="carousel-card-badge">PILAR V · Teologia Prática</span>
+                  <h3 class="carousel-card-title">Como Ler a <em>Bíblia</em> Corretamente</h3>
+                  <p class="carousel-card-desc">Introdução à hermenêutica bíblica com princípios para interpretar corretamente as Escrituras.</p>
+                  <!-- TODO: substituir pelo link real do Hotmart -->
+                  <a href="#" class="carousel-card-btn">Saiba mais →</a>
+                </div>
+              </div>
+
+              <!-- Slide 6 -->
+              <div class="carousel-card">
+                <span class="carousel-card-pilar">Teologia Prática</span>
+                <div class="carousel-card-thumb">
+                  <!-- TODO: substituir pela capa real do curso -->
+                  <img src="assets/img/cursos/pregacao.jpg" alt="A Pregação Bíblica" />
+                </div>
+                <div class="carousel-card-body">
+                  <span class="carousel-card-badge">PILAR VI · Teologia Prática</span>
+                  <h3 class="carousel-card-title">A <em>Pregação</em> Bíblica</h3>
+                  <p class="carousel-card-desc">Princípios da exposição bíblica e preparação de sermões fiéis ao texto sagrado.</p>
+                  <!-- TODO: substituir pelo link real do Hotmart -->
+                  <a href="#" class="carousel-card-btn">Saiba mais →</a>
+                </div>
+              </div>
+
+              <!-- Slide 7 -->
+              <div class="carousel-card">
+                <span class="carousel-card-pilar">Teologia Prática</span>
+                <div class="carousel-card-thumb">
+                  <!-- TODO: substituir pela capa real do curso -->
+                  <img src="assets/img/cursos/religioes.jpg" alt="Anatomia das Religiões" />
+                </div>
+                <div class="carousel-card-body">
+                  <span class="carousel-card-badge">PILAR VII · Teologia Prática</span>
+                  <h3 class="carousel-card-title">Anatomia das <em>Religiões</em></h3>
+                  <p class="carousel-card-desc">Análise crítica das principais religiões à luz da teologia cristã reformada.</p>
+                  <!-- TODO: substituir pelo link real do Hotmart -->
+                  <a href="#" class="carousel-card-btn">Saiba mais →</a>
+                </div>
+              </div>
+
+              <!-- Slide 8 -->
+              <div class="carousel-card">
+                <span class="carousel-card-pilar">Teologia da Família</span>
+                <div class="carousel-card-thumb">
+                  <!-- TODO: substituir pela capa real do curso -->
+                  <img src="assets/img/cursos/legado.jpg" alt="Da Crise ao Legado" />
+                </div>
+                <div class="carousel-card-body">
+                  <span class="carousel-card-badge">PILAR VIII · Teologia da Família</span>
+                  <h3 class="carousel-card-title">Da <em>Crise</em> ao Legado</h3>
+                  <p class="carousel-card-desc">Curso voltado à restauração de relacionamentos e construção de um legado familiar sólido.</p>
+                  <!-- TODO: substituir pelo link real do Hotmart -->
+                  <a href="#" class="carousel-card-btn">Saiba mais →</a>
+                </div>
+              </div>
+
+              <!-- Slide 9 -->
+              <div class="carousel-card">
+                <span class="carousel-card-pilar">Teologia da Família</span>
+                <div class="carousel-card-thumb">
+                  <!-- TODO: substituir pela capa real do curso -->
+                  <img src="assets/img/cursos/masculinidade.jpg" alt="Masculinidade Bíblica" />
+                </div>
+                <div class="carousel-card-body">
+                  <span class="carousel-card-badge">PILAR IX · Teologia da Família</span>
+                  <h3 class="carousel-card-title"><em>Masculinidade</em> Bíblica</h3>
+                  <p class="carousel-card-desc">Estudo sobre identidade, responsabilidade e liderança masculinas à luz das Escrituras.</p>
+                  <!-- TODO: substituir pelo link real do Hotmart -->
+                  <a href="#" class="carousel-card-btn">Saiba mais →</a>
+                </div>
+              </div>
+
+            </div><!-- /.carousel-track -->
+          </div><!-- /.carousel-track-wrapper -->
+
+          <button class="carousel-btn carousel-next" aria-label="Próximo">&#8594;</button>
+        </div><!-- /.hero-carousel -->
+      </div>
+
+      <div class="hero-faixa">
+        <ul>
+          <li>4 pilares de formação</li>
+          <li>100% online</li>
+          <li>Tradição reformada</li>
+          <li>Acesso imediato</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ================================================
+       CURSOS — Pilares e grid de cards
+  ================================================ -->
+    <section id="cursos">
+      <span class="tag">ESTRUTURA ACADÊMICA</span>
+      <h2>O que você vai aprender na CET Witsius?</h2>
+
+      <div class="filtros">
+        <button class="filtro ativo" data-filtro="todos">
+          Todos os pilares
+        </button>
+        <button class="filtro" data-filtro="Teologia Bíblica">
+          Teologia Bíblica
+        </button>
+        <button class="filtro" data-filtro="Teologia Sistemática">
+          Teologia Sistemática
+        </button>
+        <button class="filtro" data-filtro="Teologia Prática">
+          Teologia Prática
+        </button>
+        <button class="filtro" data-filtro="Teologia da Família">
+          Teologia da Família
+        </button>
+      </div>
+
+      <div class="grid-pilares">
+        <!-- Card 1 — Teologia Bíblica -->
+        <article class="card-pilar" data-pilar="Teologia Bíblica">
+          <div class="card-thumb">
+            <span class="romano">I</span>
+            <span class="badge-pilar">Teologia Bíblica</span>
+            <!-- TODO: substituir pela capa real do curso -->
+            <img
+              src="img/teste.png"
+              alt="Conselhos a Líderes Novos"
+            />
+          </div>
+          <div class="card-corpo">
+            <span class="card-label">Teologia Bíblica</span>
+            <h3>Conselhos a Líderes Novos — O Exemplo de <em>Timóteo</em></h3>
+            <p>
+              Estudo pastoral baseado nas cartas paulinas a Timóteo, abordando
+              liderança e maturidade espiritual.
+            </p>
+            <!-- TODO: substituir pelo link real do Hotmart -->
+            <a href="#" class="card-link">Saiba mais →</a>
+          </div>
+        </article>
+
+        <!-- Card 2 — Teologia Sistemática -->
+        <article class="card-pilar" data-pilar="Teologia Sistemática">
+          <div class="card-thumb">
+            <span class="romano">II</span>
+            <span class="badge-pilar">Teologia Sistemática</span>
+            <!-- TODO: substituir pela capa real do curso -->
+            <img
+              src="assets/img/cursos/alianca.jpg"
+              alt="A Aliança entre o Pai e o Filho"
+            />
+          </div>
+          <div class="card-corpo">
+            <span class="card-label">Teologia Sistemática</span>
+            <h3>A <em>Aliança</em> entre o Pai e o Filho</h3>
+            <p>
+              Estudo aprofundado da doutrina do pactum salutis, o acordo eterno
+              da redenção na teologia reformada.
+            </p>
+            <!-- TODO: substituir pelo link real do Hotmart -->
+            <a href="#" class="card-link">Saiba mais →</a>
+          </div>
+        </article>
+
+        <!-- Card 3 — Teologia Sistemática -->
+        <article class="card-pilar" data-pilar="Teologia Sistemática">
+          <div class="card-thumb">
+            <span class="romano">III</span>
+            <span class="badge-pilar">Teologia Sistemática</span>
+            <!-- TODO: substituir pela capa real do curso -->
+            <img src="assets/img/cursos/santificacao.jpg" alt="Santificação" />
+          </div>
+          <div class="card-corpo">
+            <span class="card-label">Teologia Sistemática</span>
+            <h3><em>Santificação</em></h3>
+            <p>
+              Análise bíblica do processo de transformação do crente e sua
+              relação com a obra do Espírito Santo.
+            </p>
+            <!-- TODO: substituir pelo link real do Hotmart -->
+            <a href="#" class="card-link">Saiba mais →</a>
+          </div>
+        </article>
+
+        <!-- Card 4 — Teologia Sistemática -->
+        <article class="card-pilar" data-pilar="Teologia Sistemática">
+          <div class="card-thumb">
+            <span class="romano">IV</span>
+            <span class="badge-pilar">Teologia Sistemática</span>
+            <!-- TODO: substituir pela capa real do curso -->
+            <img
+              src="assets/img/cursos/credo.jpg"
+              alt="Estudos no Credo Apostólico"
+            />
+          </div>
+          <div class="card-corpo">
+            <span class="card-label">Teologia Sistemática</span>
+            <h3>Estudos no <em>Credo Apostólico</em></h3>
+            <p>
+              Estudo sistemático das doutrinas fundamentais da fé cristã a
+              partir do Credo Apostólico.
+            </p>
+            <!-- TODO: substituir pelo link real do Hotmart -->
+            <a href="#" class="card-link">Saiba mais →</a>
+          </div>
+        </article>
+
+        <!-- Card 5 — Teologia Prática -->
+        <article class="card-pilar" data-pilar="Teologia Prática">
+          <div class="card-thumb">
+            <span class="romano">V</span>
+            <span class="badge-pilar">Teologia Prática</span>
+            <!-- TODO: substituir pela capa real do curso -->
+            <img
+              src="assets/img/cursos/ler-biblia.jpg"
+              alt="Como Ler a Bíblia Corretamente"
+            />
+          </div>
+          <div class="card-corpo">
+            <span class="card-label">Teologia Prática</span>
+            <h3>Como Ler a <em>Bíblia</em> Corretamente</h3>
+            <p>
+              Introdução à hermenêutica bíblica com princípios para interpretar
+              corretamente as Escrituras.
+            </p>
+            <!-- TODO: substituir pelo link real do Hotmart -->
+            <a href="#" class="card-link">Saiba mais →</a>
+          </div>
+        </article>
+
+        <!-- Card 6 — Teologia Prática -->
+        <article class="card-pilar" data-pilar="Teologia Prática">
+          <div class="card-thumb">
+            <span class="romano">VI</span>
+            <span class="badge-pilar">Teologia Prática</span>
+            <!-- TODO: substituir pela capa real do curso -->
+            <img
+              src="assets/img/cursos/pregacao.jpg"
+              alt="A Pregação Bíblica"
+            />
+          </div>
+          <div class="card-corpo">
+            <span class="card-label">Teologia Prática</span>
+            <h3>A <em>Pregação</em> Bíblica</h3>
+            <p>
+              Princípios da exposição bíblica e preparação de sermões fiéis ao
+              texto sagrado.
+            </p>
+            <!-- TODO: substituir pelo link real do Hotmart -->
+            <a href="#" class="card-link">Saiba mais →</a>
+          </div>
+        </article>
+
+        <!-- Card 7 — Teologia Prática -->
+        <article class="card-pilar" data-pilar="Teologia Prática">
+          <div class="card-thumb">
+            <span class="romano">VII</span>
+            <span class="badge-pilar">Teologia Prática</span>
+            <!-- TODO: substituir pela capa real do curso -->
+            <img
+              src="assets/img/cursos/religioes.jpg"
+              alt="Anatomia das Religiões"
+            />
+          </div>
+          <div class="card-corpo">
+            <span class="card-label">Teologia Prática</span>
+            <h3>Anatomia das <em>Religiões</em></h3>
+            <p>
+              Análise crítica das principais religiões à luz da teologia cristã
+              reformada.
+            </p>
+            <!-- TODO: substituir pelo link real do Hotmart -->
+            <a href="#" class="card-link">Saiba mais →</a>
+          </div>
+        </article>
+
+        <!-- Card 8 — Teologia da Família -->
+        <article class="card-pilar" data-pilar="Teologia da Família">
+          <div class="card-thumb">
+            <span class="romano">VIII</span>
+            <span class="badge-pilar">Teologia da Família</span>
+            <!-- TODO: substituir pela capa real do curso -->
+            <img src="assets/img/cursos/legado.jpg" alt="Da Crise ao Legado" />
+          </div>
+          <div class="card-corpo">
+            <span class="card-label">Teologia da Família</span>
+            <h3>Da <em>Crise</em> ao Legado</h3>
+            <p>
+              Curso voltado à restauração de relacionamentos e construção de um
+              legado familiar sólido.
+            </p>
+            <!-- TODO: substituir pelo link real do Hotmart -->
+            <a href="#" class="card-link">Saiba mais →</a>
+          </div>
+        </article>
+
+        <!-- Card 9 — Teologia da Família -->
+        <article class="card-pilar" data-pilar="Teologia da Família">
+          <div class="card-thumb">
+            <span class="romano">IX</span>
+            <span class="badge-pilar">Teologia da Família</span>
+            <!-- TODO: substituir pela capa real do curso -->
+            <img
+              src="assets/img/cursos/masculinidade.jpg"
+              alt="Masculinidade Bíblica"
+            />
+          </div>
+          <div class="card-corpo">
+            <span class="card-label">Teologia da Família</span>
+            <h3><em>Masculinidade</em> Bíblica</h3>
+            <p>
+              Estudo sobre identidade, responsabilidade e liderança masculinas à
+              luz das Escrituras.
+            </p>
+            <!-- TODO: substituir pelo link real do Hotmart -->
+            <a href="#" class="card-link">Saiba mais →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ================================================
+       QUEM SOU — Pr. Antônio Siqueira
+  ================================================ -->
+    <section id="quem-sou">
+      <div class="antonio-imagem">
+        <div class="frame-antonio">
+          <!-- TODO: substituir pela foto real do Pr. Antônio -->
+          <img
+            src="img/Pr.Antonio.JPG"
+            alt="Pr. Antônio R. Siqueira"
+          />
+        </div>
+        <p class="antonio-nome">Pr. Antônio Siqueira</p>
+        <span class="antonio-cargo">IDEALIZADOR · CET WITSIUS</span>
+        <div class="antonio-social">
+          <a href="https://instagram.com/antoniorsiqueira" target="_blank"
+            >@antoniorsiqueira</a
+          >
+          <a href="https://wa.me/5562981953752" target="_blank">WhatsApp</a>
+        </div>
+      </div>
+
+      <div class="antonio-texto">
+        <span class="tag">QUEM ESTÁ POR TRÁS</span>
+
+        <h2>Pr. <em>Antônio</em> Siqueira</h2>
+
+        <span class="cargo-completo"
+          >PASTOR · TEÓLOGO · IDEALIZADOR DO CET WITSIUS</span
+        >
+
+        <div class="divider"></div>
+
+        <!-- TODO: substituir pela bio real do Pr. Antônio -->
+        <p>
+          Pastor, teólogo e estudioso do pensamento de Herman Witsius, Pr.
+          Antônio R. Siqueira dedicou anos ao estudo da teologia reformada para
+          levar formação sólida a cristãos e líderes.
+        </p>
+        <p>
+          Fundador do CET Witsius, ele acredita que a verdadeira teologia nunca
+          é apenas intelectual — ela transforma a vida, o ministério e a
+          família.
+        </p>
+
+        <blockquote class="antonio-citacao">
+          <!-- TODO: substituir pela citação real do Pr. Antônio -->
+          "A teologia que não toca o coração não é verdadeira teologia."
+        </blockquote>
+
+        <div class="antonio-badges">
+          <span>Teólogo Reformado</span>
+          <span>Estudioso de Witsius</span>
+          <span>Pastor</span>
+          <span>Educador</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+       DIFERENCIAIS — Por que nos escolher
+  ================================================ -->
+    <section id="diferenciais">
+      <span class="tag">POR QUE NOS ESCOLHER</span>
+      <h2>Nossos diferenciais</h2>
+
+      <div class="grid-diferenciais">
+        <div class="diferencial">
+          <span class="numero-diferencial">01</span>
+          <h3>Profundidade Acadêmica</h3>
+          <p>
+            Cursos baseados em estudo bíblico rigoroso e na tradição teológica
+            reformada.
+          </p>
+        </div>
+
+        <div class="diferencial">
+          <span class="numero-diferencial">02</span>
+          <h3>Formação Prática</h3>
+          <p>
+            Aplicação da teologia à vida ministerial, espiritual e familiar.
+          </p>
+        </div>
+
+        <div class="diferencial">
+          <span class="numero-diferencial">03</span>
+          <h3>Conhecimento e Piedade</h3>
+          <p>
+            Tradição reformada que une ortodoxia doutrinária e devoção genuína.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+       MATRICULE-SE — CTA final
+  ================================================ -->
+    <section id="matricule-se">
+      <!-- Elementos decorativos -->
+      <span class="w-deco w-esquerdo" aria-hidden="true">W</span>
+      <span class="w-deco w-direito" aria-hidden="true">W</span>
+
+      <span class="tag">COMECE HOJE</span>
+
+      <h2>Teologia que une <em>verdade</em> e vida.</h2>
+
+      <p class="cta-subtitulo">
+        Acesse agora os cursos do CET Witsius e comece sua formação teológica
+        hoje.
+      </p>
+
+      <div class="cta-botoes">
+        <!-- TODO: substituir pelo link real do Hotmart -->
+        <a href="#" class="btn-primario">MATRICULE-SE AGORA</a>
+        <a
+          href="https://wa.me/5562981953752"
+          target="_blank"
+          class="btn-secundario"
+          >FALAR NO WHATSAPP</a
+        >
+      </div>
+
+      <p class="cta-nota">
+        Acesso imediato · 100% Online · Certificado incluso
+      </p>
+
+      <div class="cta-valores">
+        <div class="valor">
+          <span class="romano">I</span>
+          <span>VERDADE</span>
+        </div>
+        <div class="valor">
+          <span class="romano">II</span>
+          <span>DOUTRINA</span>
+        </div>
+        <div class="valor">
+          <span class="romano">III</span>
+          <span>VIDA</span>
+        </div>
+        <div class="valor">
+          <span class="romano">IV</span>
+          <span>PIEDADE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================
+       FOOTER
+  ================================================ -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="icone-logo">✦</span>
+            <div>
+              <strong>CET Witsius</strong>
+              <span>Herman Witsius</span>
+            </div>
+          </div>
+          <p>
+            Centro de Estudos Teológicos comprometido com teologia que une
+            verdade e piedade.
+          </p>
+        </div>
+
+        <nav class="footer-nav" aria-label="Navegação do rodapé">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#principal">Principal</a></li>
+            <li><a href="#quem-sou">Quem sou?</a></li>
+            <li><a href="#cursos">Cursos</a></li>
+            <li><a href="#matricule-se">Matricule-se</a></li>
+          </ul>
+        </nav>
+
+        <address class="footer-contato">
+          <h4>Contato</h4>
+          <ul>
+            <li>
+              <a href="https://wa.me/5562981953752" target="_blank"
+                >(62) 9 8195-3752</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://instagram.com/ceteologicoswitsius"
+                target="_blank"
+                >@ceteologicoswitsius</a
+              >
+            </li>
+            <li>
+              <a href="https://instagram.com/antoniorsiqueira" target="_blank"
+                >@antoniorsiqueira</a
+              >
+            </li>
+            <li>
+              <a href="mailto:centrodeestudosteologicoswits@gmail.com"
+                >centrodeestudosteologicoswits@gmail.com</a
+              >
+            </li>
+          </ul>
+        </address>
+      </div>
+
+      <div class="footer-rodape">
+        <span>© 2025 CET Witsius. Todos os direitos reservados.</span>
+        <em>Teologia com Piedade</em>
+        <div class="footer-social">
+          <a href="https://instagram.com/ceteologicoswitsius" target="_blank"
+            >IG</a
+          >
+          <a href="https://wa.me/5562981953752" target="_blank">WA</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- ================================================
+       BOTÃO FLUTUANTE WHATSAPP
+  ================================================ -->
+    <a
+      href="https://wa.me/5562981953752"
+      target="_blank"
+      class="btn-whatsapp-fixo"
+      aria-label="Falar no WhatsApp"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="white"
+      >
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15
+               -.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075
+               -.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059
+               -.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52
+               .149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52
+               -.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51
+               -.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372
+               -.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074
+               .149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625
+               .712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413
+               .248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"
+        />
+        <path
+          d="M12 0C5.373 0 0 5.373 0 12c0 2.127.558 4.126 1.534 5.862L.057 23.428
+               a.75.75 0 00.921.921l5.684-1.49A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0z
+               M12 22a9.944 9.944 0 01-5.187-1.453l-.371-.22-3.377.885.899-3.29-.242-.38
+               A9.944 9.944 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"
+        />
+      </svg>
+    </a>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+  </body>
+</html>

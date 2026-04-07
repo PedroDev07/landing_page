@@ -285,22 +285,26 @@ section#hero .hero-content .tag {
 section#hero .hero-content h1 {
   font-family: var(--font-display);
   font-size: 52px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.1;
-  color: white;
+  background: linear-gradient(to bottom, #ffffff 0%, #b8b8b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 section#hero .hero-content h1 em {
   font-style: italic;
-  color: var(--dourado);
+  -webkit-text-fill-color: var(--dourado);
+  background: none;
 }
 
 section#hero .hero-content .subtitulo {
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  opacity: 0.5;
+  opacity: 0.8;
   max-width: 360px;
   line-height: 1.7;
 }
@@ -310,7 +314,7 @@ section#hero .hero-content .citacao {
   font-style: italic;
   font-size: 15px;
   color: white;
-  opacity: 0.45;
+  opacity: 0.75;
   margin: 20px 0;
   border: none;
   padding: 0;
@@ -478,7 +482,8 @@ section#hero .hero-content .citacao {
 .carousel-card-desc {
   font-family: var(--font-ui);
   font-size: 12px;
-  color: #ffffff55;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.78);
   margin-bottom: 12px;
 }
 
@@ -533,15 +538,19 @@ section#cursos > .tag {
 section#cursos h2 {
   font-family: var(--font-display);
   font-size: 40px;
-  font-weight: 300;
-  color: white;
+  font-weight: 400;
   line-height: 1.2;
   margin-bottom: 32px;
+  background: linear-gradient(to bottom, #ffffff 0%, #b8b8b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 section#cursos h2 em {
   font-style: italic;
-  color: var(--dourado);
+  -webkit-text-fill-color: var(--dourado);
+  background: none;
 }
 
 /* Filtros */
@@ -684,9 +693,9 @@ section#cursos h2 em {
 .card-corpo p {
   font-family: var(--font-ui);
   font-size: 11px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  opacity: 0.35;
+  opacity: 0.78;
   line-height: 1.6;
 }
 
@@ -838,15 +847,19 @@ section#quem-sou {
 .antonio-texto h2 {
   font-family: var(--font-display);
   font-size: 36px;
-  font-weight: 300;
-  color: white;
+  font-weight: 400;
   line-height: 1.2;
   margin-bottom: 8px;
+  background: linear-gradient(to bottom, #ffffff 0%, #b8b8b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .antonio-texto h2 em {
   font-style: italic;
-  color: var(--dourado);
+  -webkit-text-fill-color: var(--dourado);
+  background: none;
 }
 
 .cargo-completo {
@@ -856,15 +869,15 @@ section#quem-sou {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: white;
-  opacity: 0.3;
+  opacity: 0.65;
 }
 
 .antonio-texto p {
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  opacity: 0.5;
+  opacity: 0.8;
   line-height: 1.75;
   margin-bottom: 12px;
 }
@@ -918,10 +931,13 @@ section#diferenciais .tag {
 section#diferenciais h2 {
   font-family: var(--font-display);
   font-size: 40px;
-  font-weight: 300;
-  color: white;
+  font-weight: 400;
   margin-bottom: 48px;
   line-height: 1.2;
+  background: linear-gradient(to bottom, #ffffff 0%, #b8b8b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .grid-diferenciais {
@@ -966,9 +982,9 @@ section#diferenciais h2 {
 .diferencial p {
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  opacity: 0.5;
+  opacity: 0.8;
   line-height: 1.7;
 }
 
@@ -1015,25 +1031,29 @@ section#matricule-se .tag {
 section#matricule-se h2 {
   font-family: var(--font-display);
   font-size: 48px;
-  font-weight: 300;
-  color: white;
+  font-weight: 400;
   line-height: 1.2;
   margin-bottom: 20px;
   position: relative;
   z-index: 1;
+  background: linear-gradient(to bottom, #ffffff 0%, #b8b8b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 section#matricule-se h2 em {
   font-style: italic;
-  color: var(--dourado);
+  -webkit-text-fill-color: var(--dourado);
+  background: none;
 }
 
 .cta-subtitulo {
   font-family: var(--font-ui);
   font-size: 13px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  opacity: 0.35;
+  opacity: 0.78;
   max-width: 420px;
   margin: 0 auto 36px;
   line-height: 1.7;
@@ -1075,9 +1095,9 @@ section#matricule-se h2 em {
 .cta-nota {
   font-family: var(--font-ui);
   font-size: 11px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  opacity: 0.2;
+  opacity: 0.6;
   margin-bottom: 48px;
   position: relative;
   z-index: 1;
@@ -1111,7 +1131,7 @@ section#matricule-se h2 em {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: white;
-  opacity: 0.25;
+  opacity: 0.65;
 }
 
 /* ================================================
@@ -1159,17 +1179,17 @@ footer {
 .footer-logo span {
   font-family: var(--font-ui);
   font-size: 11px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  opacity: 0.4;
+  opacity: 0.7;
 }
 
 .footer-brand > p {
   font-family: var(--font-ui);
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  opacity: 0.4;
+  opacity: 0.7;
   line-height: 1.7;
   max-width: 240px;
 }
@@ -1197,9 +1217,9 @@ footer {
 .footer-contato a {
   font-family: var(--font-ui);
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  opacity: 0.5;
+  opacity: 0.75;
   transition: opacity 0.2s;
   word-break: break-word;
 }
@@ -1221,9 +1241,9 @@ footer {
 .footer-rodape > span {
   font-family: var(--font-ui);
   font-size: 11px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  opacity: 0.3;
+  opacity: 0.65;
 }
 
 .footer-rodape em {
@@ -1245,7 +1265,7 @@ footer {
   font-weight: 500;
   letter-spacing: 1px;
   color: white;
-  opacity: 0.4;
+  opacity: 0.7;
   border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 6px 10px;
   border-radius: 2px;

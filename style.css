@@ -46,7 +46,7 @@ body {
   background-color: var(--preto);
   color: white;
   font-family: var(--font-ui);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -301,10 +301,10 @@ section#hero .hero-content h1 em {
 
 section#hero .hero-content .subtitulo {
   font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 500;
   color: white;
-  opacity: 0.8;
+  opacity: 0.9;
   max-width: 360px;
   line-height: 1.7;
 }
@@ -313,8 +313,9 @@ section#hero .hero-content .citacao {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 15px;
+  font-weight: 400;
   color: white;
-  opacity: 0.75;
+  opacity: 0.9;
   margin: 20px 0;
   border: none;
   padding: 0;
@@ -481,9 +482,9 @@ section#hero .hero-content .citacao {
 
 .carousel-card-desc {
   font-family: var(--font-ui);
-  font-size: 12px;
-  font-weight: 400;
-  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 12px;
 }
 
@@ -692,10 +693,10 @@ section#cursos h2 em {
 
 .card-corpo p {
   font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 400;
+  font-size: 13px;
+  font-weight: 500;
   color: white;
-  opacity: 0.78;
+  opacity: 0.9;
   line-height: 1.6;
 }
 
@@ -874,10 +875,10 @@ section#quem-sou {
 
 .antonio-texto p {
   font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 500;
   color: white;
-  opacity: 0.8;
+  opacity: 0.9;
   line-height: 1.75;
   margin-bottom: 12px;
 }
@@ -890,8 +891,9 @@ section#quem-sou {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 16px;
+  font-weight: 400;
   color: white;
-  opacity: 0.7;
+  opacity: 0.9;
   line-height: 1.5;
 }
 
@@ -981,10 +983,10 @@ section#diferenciais h2 {
 
 .diferencial p {
   font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 500;
   color: white;
-  opacity: 0.8;
+  opacity: 0.9;
   line-height: 1.7;
 }
 
@@ -1032,7 +1034,8 @@ section#matricule-se h2 {
   font-family: var(--font-display);
   font-size: 48px;
   font-weight: 400;
-  line-height: 1.2;
+  line-height: 1.4;
+  padding-bottom: 8px;
   margin-bottom: 20px;
   position: relative;
   z-index: 1;
@@ -1050,10 +1053,10 @@ section#matricule-se h2 em {
 
 .cta-subtitulo {
   font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 400;
+  font-size: 15px;
+  font-weight: 500;
   color: white;
-  opacity: 0.78;
+  opacity: 0.9;
   max-width: 420px;
   margin: 0 auto 36px;
   line-height: 1.7;
@@ -1186,10 +1189,10 @@ footer {
 
 .footer-brand > p {
   font-family: var(--font-ui);
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 13px;
+  font-weight: 500;
   color: white;
-  opacity: 0.7;
+  opacity: 0.85;
   line-height: 1.7;
   max-width: 240px;
 }
@@ -1240,10 +1243,10 @@ footer {
 
 .footer-rodape > span {
   font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 400;
+  font-size: 13px;
+  font-weight: 500;
   color: white;
-  opacity: 0.65;
+  opacity: 0.8;
 }
 
 .footer-rodape em {

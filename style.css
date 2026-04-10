@@ -452,7 +452,7 @@ section#hero .hero-content .citacao {
 }
 
 .carousel-card-thumb {
-  height: 220px;
+  height: 280px;
   background: #111;
   display: flex;
   align-items: center;
@@ -466,6 +466,11 @@ section#hero .hero-content .citacao {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+}
+
+.carousel-card-thumb img[src*="curso002"] {
+  object-position: top;
 }
 
 .carousel-card-body {
@@ -639,7 +644,7 @@ section#cursos h2 em {
 .card-thumb {
   position: relative;
   width: 100%;
-  height: 160px;
+  height: 220px;
   background-color: #1a1612;
   overflow: hidden;
 }
@@ -648,12 +653,16 @@ section#cursos h2 em {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.6;
+  opacity: 1;
   transition: opacity 0.3s;
 }
 
+.card-thumb img[src*="curso002"] {
+  object-position: top;
+}
+
 .card-pilar:hover .card-thumb img {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .card-thumb .romano {

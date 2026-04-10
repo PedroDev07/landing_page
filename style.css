@@ -524,6 +524,27 @@ section#hero .hero-content .citacao {
   border-color: #c9a84c;
 }
 
+.carousel-progress {
+  height: 2px;
+  background: #c9a84c33;
+  border-radius: 2px;
+  overflow: hidden;
+  width: 60%;
+  margin: 14px auto 0;
+}
+
+.carousel-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #c9a84c;
+  border-radius: 2px;
+}
+
+.carousel-progress-bar.animating {
+  transition: width 7s linear;
+  width: 100%;
+}
+
 /* ================================================
    3. CURSOS — PILARES COM FILTRO
 ================================================ */
@@ -701,17 +722,23 @@ section#cursos h2 em {
 }
 
 .card-link {
+  display: inline-block;
   font-family: var(--font-ui);
   font-size: 11px;
-  font-weight: 400;
-  color: var(--dourado);
-  opacity: 0.6;
-  margin-top: 4px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #0d0b08;
+  background: var(--dourado);
+  padding: 10px 20px;
+  border-radius: 2px;
+  margin-top: 12px;
+  text-decoration: none;
   transition: opacity 0.2s;
 }
 
 .card-link:hover {
-  opacity: 1;
+  opacity: 0.85;
 }
 
 .card-pilar.oculto {

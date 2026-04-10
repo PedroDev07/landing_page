@@ -28,6 +28,7 @@ var track = document.querySelector('.carousel-track');
 var carouselCards = document.querySelectorAll('.carousel-card');
 var btnNext = document.querySelector('.carousel-next');
 var btnPrev = document.querySelector('.carousel-prev');
+var progressBars = document.querySelectorAll('.carousel-progress-bar');
 
 if (track && carouselCards.length > 0 && btnNext && btnPrev) {
   var currentIndex = 0;
@@ -35,15 +36,42 @@ if (track && carouselCards.length > 0 && btnNext && btnPrev) {
 
   function goTo(index) {
     track.style.transform = 'translateX(-' + (index * 100) + '%)';
+    startProgress();
+  }
+
+  function startProgress() {
+    progressBars.forEach(function (bar) {
+      bar.classList.remove('animating');
+      void bar.offsetWidth;
+      bar.classList.add('animating');
+    });
   }
 
   btnNext.addEventListener('click', function () {
     currentIndex = (currentIndex + 1) % total;
     goTo(currentIndex);
+    resetAutoplay();
   });
 
   btnPrev.addEventListener('click', function () {
     currentIndex = (currentIndex - 1 + total) % total;
     goTo(currentIndex);
+    resetAutoplay();
   });
+
+  var autoplayTimer = setInterval(function () {
+    currentIndex = (currentIndex + 1) % total;
+    goTo(currentIndex);
+  }, 7000);
+
+  function resetAutoplay() {
+    clearInterval(autoplayTimer);
+    autoplayTimer = setInterval(function () {
+      currentIndex = (currentIndex + 1) % total;
+      goTo(currentIndex);
+    }, 7000);
+  }
+
+  // inicia a barra ao carregar a página
+  startProgress();
 }

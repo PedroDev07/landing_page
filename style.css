@@ -46,7 +46,7 @@ body {
   background-color: var(--preto);
   color: white;
   font-family: var(--font-ui);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
@@ -285,22 +285,26 @@ section#hero .hero-content .tag {
 section#hero .hero-content h1 {
   font-family: var(--font-display);
   font-size: 52px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.1;
-  color: white;
+  background: linear-gradient(to bottom, #ffffff 0%, #b8b8b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 section#hero .hero-content h1 em {
   font-style: italic;
-  color: var(--dourado);
+  -webkit-text-fill-color: var(--dourado);
+  background: none;
 }
 
 section#hero .hero-content .subtitulo {
   font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 500;
   color: white;
-  opacity: 0.5;
+  opacity: 0.9;
   max-width: 360px;
   line-height: 1.7;
 }
@@ -309,8 +313,9 @@ section#hero .hero-content .citacao {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 15px;
+  font-weight: 400;
   color: white;
-  opacity: 0.45;
+  opacity: 0.9;
   margin: 20px 0;
   border: none;
   padding: 0;
@@ -447,7 +452,7 @@ section#hero .hero-content .citacao {
 }
 
 .carousel-card-thumb {
-  height: 220px;
+  height: 280px;
   background: #111;
   display: flex;
   align-items: center;
@@ -461,6 +466,11 @@ section#hero .hero-content .citacao {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+}
+
+.carousel-card-thumb img[src*="curso002"] {
+  object-position: top;
 }
 
 .carousel-card-body {
@@ -477,8 +487,9 @@ section#hero .hero-content .citacao {
 
 .carousel-card-desc {
   font-family: var(--font-ui);
-  font-size: 12px;
-  color: #ffffff55;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
   margin-bottom: 12px;
 }
 
@@ -518,6 +529,27 @@ section#hero .hero-content .citacao {
   border-color: #c9a84c;
 }
 
+.carousel-progress {
+  height: 2px;
+  background: #c9a84c33;
+  border-radius: 2px;
+  overflow: hidden;
+  width: 60%;
+  margin: 14px auto 0;
+}
+
+.carousel-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #c9a84c;
+  border-radius: 2px;
+}
+
+.carousel-progress-bar.animating {
+  transition: width 7s linear;
+  width: 100%;
+}
+
 /* ================================================
    3. CURSOS — PILARES COM FILTRO
 ================================================ */
@@ -533,15 +565,19 @@ section#cursos > .tag {
 section#cursos h2 {
   font-family: var(--font-display);
   font-size: 40px;
-  font-weight: 300;
-  color: white;
+  font-weight: 400;
   line-height: 1.2;
   margin-bottom: 32px;
+  background: linear-gradient(to bottom, #ffffff 0%, #b8b8b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 section#cursos h2 em {
   font-style: italic;
-  color: var(--dourado);
+  -webkit-text-fill-color: var(--dourado);
+  background: none;
 }
 
 /* Filtros */
@@ -608,7 +644,7 @@ section#cursos h2 em {
 .card-thumb {
   position: relative;
   width: 100%;
-  height: 160px;
+  height: 220px;
   background-color: #1a1612;
   overflow: hidden;
 }
@@ -617,12 +653,16 @@ section#cursos h2 em {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.6;
+  opacity: 1;
   transition: opacity 0.3s;
 }
 
+.card-thumb img[src*="curso002"] {
+  object-position: top;
+}
+
 .card-pilar:hover .card-thumb img {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .card-thumb .romano {
@@ -683,25 +723,31 @@ section#cursos h2 em {
 
 .card-corpo p {
   font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 300;
+  font-size: 13px;
+  font-weight: 500;
   color: white;
-  opacity: 0.35;
+  opacity: 0.9;
   line-height: 1.6;
 }
 
 .card-link {
+  display: inline-block;
   font-family: var(--font-ui);
   font-size: 11px;
-  font-weight: 400;
-  color: var(--dourado);
-  opacity: 0.6;
-  margin-top: 4px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #0d0b08;
+  background: var(--dourado);
+  padding: 10px 20px;
+  border-radius: 2px;
+  margin-top: 12px;
+  text-decoration: none;
   transition: opacity 0.2s;
 }
 
 .card-link:hover {
-  opacity: 1;
+  opacity: 0.85;
 }
 
 .card-pilar.oculto {
@@ -838,15 +884,19 @@ section#quem-sou {
 .antonio-texto h2 {
   font-family: var(--font-display);
   font-size: 36px;
-  font-weight: 300;
-  color: white;
+  font-weight: 400;
   line-height: 1.2;
   margin-bottom: 8px;
+  background: linear-gradient(to bottom, #ffffff 0%, #b8b8b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .antonio-texto h2 em {
   font-style: italic;
-  color: var(--dourado);
+  -webkit-text-fill-color: var(--dourado);
+  background: none;
 }
 
 .cargo-completo {
@@ -856,15 +906,15 @@ section#quem-sou {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   color: white;
-  opacity: 0.3;
+  opacity: 0.65;
 }
 
 .antonio-texto p {
   font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 500;
   color: white;
-  opacity: 0.5;
+  opacity: 0.9;
   line-height: 1.75;
   margin-bottom: 12px;
 }
@@ -877,8 +927,9 @@ section#quem-sou {
   font-family: var(--font-display);
   font-style: italic;
   font-size: 16px;
+  font-weight: 400;
   color: white;
-  opacity: 0.7;
+  opacity: 0.9;
   line-height: 1.5;
 }
 
@@ -918,10 +969,13 @@ section#diferenciais .tag {
 section#diferenciais h2 {
   font-family: var(--font-display);
   font-size: 40px;
-  font-weight: 300;
-  color: white;
+  font-weight: 400;
   margin-bottom: 48px;
   line-height: 1.2;
+  background: linear-gradient(to bottom, #ffffff 0%, #b8b8b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .grid-diferenciais {
@@ -965,10 +1019,10 @@ section#diferenciais h2 {
 
 .diferencial p {
   font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 500;
   color: white;
-  opacity: 0.5;
+  opacity: 0.9;
   line-height: 1.7;
 }
 
@@ -1015,25 +1069,30 @@ section#matricule-se .tag {
 section#matricule-se h2 {
   font-family: var(--font-display);
   font-size: 48px;
-  font-weight: 300;
-  color: white;
-  line-height: 1.2;
+  font-weight: 400;
+  line-height: 1.4;
+  padding-bottom: 8px;
   margin-bottom: 20px;
   position: relative;
   z-index: 1;
+  background: linear-gradient(to bottom, #ffffff 0%, #b8b8b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 section#matricule-se h2 em {
   font-style: italic;
-  color: var(--dourado);
+  -webkit-text-fill-color: var(--dourado);
+  background: none;
 }
 
 .cta-subtitulo {
   font-family: var(--font-ui);
-  font-size: 13px;
-  font-weight: 300;
+  font-size: 15px;
+  font-weight: 500;
   color: white;
-  opacity: 0.35;
+  opacity: 0.9;
   max-width: 420px;
   margin: 0 auto 36px;
   line-height: 1.7;
@@ -1075,9 +1134,9 @@ section#matricule-se h2 em {
 .cta-nota {
   font-family: var(--font-ui);
   font-size: 11px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  opacity: 0.2;
+  opacity: 0.6;
   margin-bottom: 48px;
   position: relative;
   z-index: 1;
@@ -1111,7 +1170,7 @@ section#matricule-se h2 em {
   letter-spacing: 2px;
   text-transform: uppercase;
   color: white;
-  opacity: 0.25;
+  opacity: 0.65;
 }
 
 /* ================================================
@@ -1159,17 +1218,17 @@ footer {
 .footer-logo span {
   font-family: var(--font-ui);
   font-size: 11px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  opacity: 0.4;
+  opacity: 0.7;
 }
 
 .footer-brand > p {
   font-family: var(--font-ui);
-  font-size: 12px;
-  font-weight: 300;
+  font-size: 13px;
+  font-weight: 500;
   color: white;
-  opacity: 0.4;
+  opacity: 0.85;
   line-height: 1.7;
   max-width: 240px;
 }
@@ -1197,9 +1256,9 @@ footer {
 .footer-contato a {
   font-family: var(--font-ui);
   font-size: 12px;
-  font-weight: 300;
+  font-weight: 400;
   color: white;
-  opacity: 0.5;
+  opacity: 0.75;
   transition: opacity 0.2s;
   word-break: break-word;
 }
@@ -1220,10 +1279,10 @@ footer {
 
 .footer-rodape > span {
   font-family: var(--font-ui);
-  font-size: 11px;
-  font-weight: 300;
+  font-size: 13px;
+  font-weight: 500;
   color: white;
-  opacity: 0.3;
+  opacity: 0.8;
 }
 
 .footer-rodape em {
@@ -1245,7 +1304,7 @@ footer {
   font-weight: 500;
   letter-spacing: 1px;
   color: white;
-  opacity: 0.4;
+  opacity: 0.7;
   border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 6px 10px;
   border-radius: 2px;

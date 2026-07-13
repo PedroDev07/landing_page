@@ -473,6 +473,10 @@ section#hero .hero-content .citacao {
   object-position: top;
 }
 
+.carousel-card-thumb img[src*="curso03"] {
+  object-position: center 18%;
+}
+
 .carousel-card-body {
   padding: 16px;
 }
@@ -661,6 +665,10 @@ section#cursos h2 em {
   object-position: top;
 }
 
+.card-thumb img[src*="curso03"] {
+  object-position: center 18%;
+}
+
 .card-pilar:hover .card-thumb img {
   opacity: 0.9;
 }
@@ -673,6 +681,22 @@ section#cursos h2 em {
   line-height: 1;
   z-index: 1;
   opacity: 0.4;
+}
+
+/* Placeholder de capa (usado até chegar a imagem real) */
+.card-thumb .thumb-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1a1814;
+  font-family: var(--font-ui);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.25);
 }
 
 .badge-pilar {
